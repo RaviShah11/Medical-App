@@ -26,4 +26,6 @@ export const REAL_IMAGES: Record<string, RealImage> = {
   'derm-bcc': { source: require('../../assets/imaging/derm-bcc.jpg'), width: 960, height: 639, author: "Unknown author", license: "Public domain", page: "https://commons.wikimedia.org/wiki/File:Basal_cell_carcinoma.jpg" },
   'smear-megaloblastic': { source: require('../../assets/imaging/smear-megaloblastic.jpg'), width: 960, height: 802, author: "Ed Uthman from Houston, TX, USA", license: "CC BY 2.0", page: "https://commons.wikimedia.org/wiki/File:Hypersegmented_neutrophil.jpg" },
   'smear-sickle': { source: require('../../assets/imaging/smear-sickle.jpg'), width: 960, height: 1120, author: "NIDDK", license: "Public domain", page: "https://commons.wikimedia.org/wiki/File:Sicklecells.jpg" },
+  'ct-subdural': { source: require('../../assets/imaging/ct-subdural.jpg'), width: 960, height: 1172, author: "Glitzy queen00 (English Wikipedia)", license: "Public domain", page: "https://commons.wikimedia.org/wiki/File:Trauma_subdural.jpg" },
+  'us-ectopic': { source: require('../../assets/imaging/us-ectopic.jpg'), width: 960, height: 924, author: "X. Compagnion", license: "Public domain", page: "https://commons.wikimedia.org/wiki/File:Ectopic_pregnancy.JPG" },
 };
