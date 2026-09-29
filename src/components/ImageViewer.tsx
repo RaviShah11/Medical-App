@@ -1,7 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Image, Linking, Pressable, ScrollView, Text, View } from 'react-native';
 import { imagingById } from '../data/imaging';
+import { REAL_IMAGES } from '../data/realImages';
 import { useTheme } from '../lib/theme';
 import { imageAspect, ImagingRenderer } from './imaging/ImagingRenderer';
 import { T } from './ui';
@@ -15,7 +16,8 @@ export function ImageViewer({ id, findings = false }: { id: string; findings?: b
   const [active, setActive] = useState<number | null>(null);
 
   const w = width * zoom;
-  const h = w * imageAspect(id);
+  const real = REAL_IMAGES[id];
+  const h = w * (real ? real.height / real.width : imageAspect(id));
   const spots = findings && labels ? (study?.findings ?? []) : [];
 
   return (
@@ -28,7 +30,7 @@ export function ImageViewer({ id, findings = false }: { id: string; findings?: b
           <ScrollView horizontal scrollEnabled={zoom > 1} showsHorizontalScrollIndicator={zoom > 1}>
             <ScrollView scrollEnabled={zoom > 1} nestedScrollEnabled style={{ maxHeight: zoom > 1 ? width * 1.1 : undefined }}>
               <View style={{ width: w, height: h }}>
-                <ImagingRenderer id={id} width={w} />
+                {real ? <Image source={real.source} style={{ width: w, height: h }} resizeMode="contain" accessibilityLabel={study?.diagnosis} /> : <ImagingRenderer id={id} width={w} />}
                 {spots.map((f, i) => (
                   <Pressable
                     key={f.label}
@@ -79,7 +81,15 @@ export function ImageViewer({ id, findings = false }: { id: string; findings?: b
           ))}
         </View>
       )}
-      <T v="small">Schematic illustration for study purposes.</T>
+      {real ? (
+        <Pressable onPress={() => Linking.openURL(real.page)}>
+          <T v="small">
+            Image: {real.author}, {real.license}, via Wikimedia Commons
+          </T>
+        </Pressable>
+      ) : (
+        <T v="small">Schematic illustration for study purposes.</T>
+      )}
     </View>
   );
 }
