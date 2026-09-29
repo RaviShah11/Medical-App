@@ -160,7 +160,7 @@ export const questionsPart1: Question[] = [
     discipline: 'clinical',
     exams: [...S2],
     difficulty: 1,
-    stem: 'A tall thin 22 year old man has sudden right sided chest pain and dyspnea at rest. Breath sounds are decreased on the right with hyperresonance. Vitals are stable. What is the most likely diagnosis?',
+    stem: 'A tall thin 22 year old man has sudden left sided chest pain and dyspnea at rest. Breath sounds are decreased on the left with hyperresonance. Vitals are stable. What is the most likely diagnosis?',
     imageId: 'cxr-pneumothorax',
     choices: ['Pulmonary embolism', 'Primary spontaneous pneumothorax', 'Pneumonia', 'Pleural effusion', 'Tension pneumothorax'],
     answer: 1,
