@@ -82,9 +82,10 @@ export function ImageViewer({ id, findings = false }: { id: string; findings?: b
         </View>
       )}
       {real ? (
-        <Pressable onPress={() => Linking.openURL(real.page)}>
+        <Pressable disabled={!real.page} onPress={() => Linking.openURL(real.page)}>
           <T v="small">
-            Image: {real.author}, {real.license}, via Wikimedia Commons
+            Image: {real.author}, {real.license}
+            {real.page ? ', via Wikimedia Commons' : ''}
           </T>
         </Pressable>
       ) : (

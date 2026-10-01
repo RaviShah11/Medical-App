@@ -28,4 +28,5 @@ export const REAL_IMAGES: Record<string, RealImage> = {
   'smear-sickle': { source: require('../../assets/imaging/smear-sickle.jpg'), width: 960, height: 1120, author: "NIDDK", license: "Public domain", page: "https://commons.wikimedia.org/wiki/File:Sicklecells.jpg" },
   'ct-subdural': { source: require('../../assets/imaging/ct-subdural.jpg'), width: 960, height: 1172, author: "Glitzy queen00 (English Wikipedia)", license: "Public domain", page: "https://commons.wikimedia.org/wiki/File:Trauma_subdural.jpg" },
   'us-ectopic': { source: require('../../assets/imaging/us-ectopic.jpg'), width: 960, height: 924, author: "X. Compagnion", license: "Public domain", page: "https://commons.wikimedia.org/wiki/File:Ectopic_pregnancy.JPG" },
+  'cxr-effusion': { source: require('../../assets/imaging/cxr-effusion.jpg'), width: 960, height: 786, author: "Yale Rosen (patient identifiers removed)", license: "CC BY-SA 2.0", page: "https://commons.wikimedia.org/wiki/File:Pleural_effusion_-_Left_lung_(7471755836).jpg" },
 };
